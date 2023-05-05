@@ -1,3 +1,30 @@
+# Use this file to create/run docker container of Microsoft SQL Server 
+
+# >>Running and Stopping
+# Starting the container from the same directory:  docker-compose  -f docker-compose-mssql-2022.yml up -d
+# Stopping the container from the same directory:  docker-compose  -f docker-compose-mssql-2022.yml down 
+# Starting the container from another directory--just a sample as it will vary based on host system:
+#   docker-compose -f /Users/khervey/rt/rtWorkbox/MyNexus-May2023/simpleMSSQL/docker-compose-mssql-2022.yml up -d
+# Stopping the container from another directory--just a sample as it will vary based on host system:
+#   docker-compose -f /Users/khervey/rt/rtWorkbox/MyNexus-May2023/simpleMSSQL/docker-compose-mssql-2022.yml down
+
+
+# >>Connecting to MS SQL Server; Example based on Azure Data Studio--This just an example; for instance, a connection string will also work
+# Connection type:  Microsoft SQL Server
+# Parameters: yes
+# Server: host.docker.internal,1434   >> Note that the port number is as specified in the ports section of this file.  It is the number before the colon
+# Authentication type: SQL Login
+# User name: sa
+#   Note:  The username "sa" is the system administrator account for Microsoft SQL Server. It is a built-in account that is created when SQL Server is installed. 
+# Password is as shown below in the environment section of this file
+# Database: Default
+# Encrypt: Mandatory (True)
+# Trust Server certificate: true
+# Server Group: Default
+# Name: MyServerName    >> Note this is whatever you want and will show up to distinguish from other servers
+
+
+
 version: "3"
 
 services:
